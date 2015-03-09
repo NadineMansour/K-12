@@ -1,17 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  e-mail: MyString
+  email: MyString
   level: 
   time: 
   score: 
-  clicks: MyString
-  int: MyString
+  clicks: 
 
 two:
-  e-mail: MyString
+  email: MyString
   level: 
   time: 
   score: 
-  clicks: MyString
-  int: MyString
+  clicks: 

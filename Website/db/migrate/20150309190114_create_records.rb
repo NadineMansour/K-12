@@ -1,12 +1,11 @@
 class CreateRecords < ActiveRecord::Migration
   def change
     create_table :records do |t|
-      t.string :e-mail
-      t.int :level
-      t.int, :time
-      t.int, :score
-      t.string :clicks
-      t.string :int
+      t.string :email
+      t.integer :level
+      t.integer :time
+      t.integer :score
+      t.integer :clicks
 
       t.timestamps null: false
     end
