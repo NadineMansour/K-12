@@ -21,3 +21,237 @@ Migrating to CreateRecords (20150309190114)
   [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150309190114"]]
   [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
   [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started POST "/api/records/get_records_by_email" for 127.0.0.1 at 2015-03-09 21:27:01 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActionController::RoutingError (The controller-level `respond_to' feature has been extracted to the `responders` gem. Add it to your Gemfile to continue using this feature:
+  gem 'responders', '~> 2.0'
+Consult the Rails upgrade guide for details.):
+  app/controllers/api/base_controller.rb:2:in `<class:BaseController>'
+  app/controllers/api/base_controller.rb:1:in `<top (required)>'
+  app/controllers/api/records_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /home/mariam/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /home/mariam/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.9ms)
+  Rendered /home/mariam/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (25.0ms)
+  Rendered /home/mariam/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (24.8ms)
+  Rendered /home/mariam/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (126.5ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0x00000004212718 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x000000042122e0 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x0000000420b288 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/api/records/get_records_by_email" for 127.0.0.1 at 2015-03-09 21:27:46 +0200
+
+ActionController::RoutingError (The controller-level `respond_to' feature has been extracted to the `responders` gem. Add it to your Gemfile to continue using this feature:
+  gem 'responders', '~> 2.0'
+Consult the Rails upgrade guide for details.):
+  app/controllers/api/base_controller.rb:2:in `<class:BaseController>'
+  app/controllers/api/base_controller.rb:1:in `<top (required)>'
+  app/controllers/api/records_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /home/mariam/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.5ms)
+  Rendered /home/mariam/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.9ms)
+  Rendered /home/mariam/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.8ms)
+  Rendered /home/mariam/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /home/mariam/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (85.6ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0x00000004212718 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x000000042122e0 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x0000000420b288 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "records" ("email", "time", "score", "clicks", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["email", "mariam@gmail.com"], ["time", 8], ["score", 3], ["clicks", 9], ["created_at", "2015-03-09 19:28:51.515100"], ["updated_at", "2015-03-09 19:28:51.515100"]]
+  [1m[36m (18.8ms)[0m  [1mcommit transaction[0m
+
+
+Started POST "/api/records/get_records_by_email" for 127.0.0.1 at 2015-03-09 21:28:55 +0200
+
+ActionController::RoutingError (The controller-level `respond_to' feature has been extracted to the `responders` gem. Add it to your Gemfile to continue using this feature:
+  gem 'responders', '~> 2.0'
+Consult the Rails upgrade guide for details.):
+  app/controllers/api/base_controller.rb:2:in `<class:BaseController>'
+  app/controllers/api/base_controller.rb:1:in `<top (required)>'
+  app/controllers/api/records_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /home/mariam/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.5ms)
+  Rendered /home/mariam/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.8ms)
+  Rendered /home/mariam/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.7ms)
+  Rendered /home/mariam/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (6.2ms)
+  Rendered /home/mariam/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (83.0ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0x00000004212718 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x000000042122e0 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x0000000420b288 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started GET "/api/records/get_records_by_email" for 127.0.0.1 at 2015-03-09 21:29:17 +0200
+
+ActionController::RoutingError (The controller-level `respond_to' feature has been extracted to the `responders` gem. Add it to your Gemfile to continue using this feature:
+  gem 'responders', '~> 2.0'
+Consult the Rails upgrade guide for details.):
+  app/controllers/api/base_controller.rb:2:in `<class:BaseController>'
+  app/controllers/api/base_controller.rb:1:in `<top (required)>'
+  app/controllers/api/records_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /home/mariam/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.9ms)
+  Rendered /home/mariam/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.5ms)
+  Rendered /home/mariam/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendered /home/mariam/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (8.4ms)
+  Rendered /home/mariam/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (85.2ms)
+  Rendered /home/mariam/.rvm/gems/ruby-2.1.2/gems/web-console-2.1.1/lib/web_console/templates/_markup.html (0.5ms)
+  Rendered /home/mariam/.rvm/gems/ruby-2.1.2/gems/web-console-2.1.1/lib/web_console/templates/style.css within layouts/inlined_string (0.4ms)
+  Rendered /home/mariam/.rvm/gems/ruby-2.1.2/gems/web-console-2.1.1/lib/web_console/templates/_inner_console_markup.html within layouts/inlined_string (0.6ms)
+  Rendered /home/mariam/.rvm/gems/ruby-2.1.2/gems/web-console-2.1.1/lib/web_console/templates/_prompt_box_markup.html within layouts/inlined_string (0.4ms)
+  Rendered /home/mariam/.rvm/gems/ruby-2.1.2/gems/web-console-2.1.1/lib/web_console/templates/console.js within layouts/javascript (41.8ms)
+  Rendered /home/mariam/.rvm/gems/ruby-2.1.2/gems/web-console-2.1.1/lib/web_console/templates/main.js within layouts/javascript (0.5ms)
+  Rendered /home/mariam/.rvm/gems/ruby-2.1.2/gems/web-console-2.1.1/lib/web_console/templates/error_page.js within layouts/javascript (5.0ms)
+  Rendered /home/mariam/.rvm/gems/ruby-2.1.2/gems/web-console-2.1.1/lib/web_console/templates/index.html (95.6ms)
+
+
+Started POST "/api/records/get_records_by_email" for 127.0.0.1 at 2015-03-09 21:30:31 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActionController::RoutingError (The controller-level `respond_to' feature has been extracted to the `responders` gem. Add it to your Gemfile to continue using this feature:
+  gem 'responders', '~> 2.0'
+Consult the Rails upgrade guide for details.):
+  app/controllers/api/base_controller.rb:2:in `<class:BaseController>'
+  app/controllers/api/base_controller.rb:1:in `<top (required)>'
+  app/controllers/api/records_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /home/mariam/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.5ms)
+  Rendered /home/mariam/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.8ms)
+  Rendered /home/mariam/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (24.4ms)
+  Rendered /home/mariam/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (29.4ms)
+  Rendered /home/mariam/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (138.8ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0x00000004bd20a0 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x00000004bd1d80 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x00000004bce3b0 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/api/records/get_records_by_email" for 127.0.0.1 at 2015-03-09 21:31:27 +0200
+
+ActionController::RoutingError (The controller-level `respond_to' feature has been extracted to the `responders` gem. Add it to your Gemfile to continue using this feature:
+  gem 'responders', '~> 2.0'
+Consult the Rails upgrade guide for details.):
+  app/controllers/api/base_controller.rb:2:in `<class:BaseController>'
+  app/controllers/api/base_controller.rb:1:in `<top (required)>'
+  app/controllers/api/records_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /home/mariam/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.6ms)
+  Rendered /home/mariam/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (6.1ms)
+  Rendered /home/mariam/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (11.0ms)
+  Rendered /home/mariam/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /home/mariam/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (86.3ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0x00000004bd20a0 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x00000004bd1d80 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x00000004bce3b0 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-09 21:33:10 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/mariam/.rvm/gems/ruby-2.1.2/gems/railties-4.2.0/lib/rails/templates/rails/welcome/index.html.erb (2.3ms)
+Completed 200 OK in 64ms (Views: 31.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/records/" for 127.0.0.1 at 2015-03-09 21:33:21 +0200
+
+ActionController::RoutingError (The controller-level `respond_to' feature has been extracted to the `responders` gem. Add it to your Gemfile to continue using this feature:
+  gem 'responders', '~> 2.0'
+Consult the Rails upgrade guide for details.):
+  app/controllers/api/base_controller.rb:2:in `<class:BaseController>'
+  app/controllers/api/base_controller.rb:1:in `<top (required)>'
+  app/controllers/api/records_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /home/mariam/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /home/mariam/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.7ms)
+  Rendered /home/mariam/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (16.3ms)
+  Rendered /home/mariam/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /home/mariam/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (110.4ms)
+  Rendered /home/mariam/.rvm/gems/ruby-2.1.2/gems/web-console-2.1.1/lib/web_console/templates/_markup.html (0.5ms)
+  Rendered /home/mariam/.rvm/gems/ruby-2.1.2/gems/web-console-2.1.1/lib/web_console/templates/style.css within layouts/inlined_string (0.5ms)
+  Rendered /home/mariam/.rvm/gems/ruby-2.1.2/gems/web-console-2.1.1/lib/web_console/templates/_inner_console_markup.html within layouts/inlined_string (0.5ms)
+  Rendered /home/mariam/.rvm/gems/ruby-2.1.2/gems/web-console-2.1.1/lib/web_console/templates/_prompt_box_markup.html within layouts/inlined_string (0.5ms)
+  Rendered /home/mariam/.rvm/gems/ruby-2.1.2/gems/web-console-2.1.1/lib/web_console/templates/console.js within layouts/javascript (43.9ms)
+  Rendered /home/mariam/.rvm/gems/ruby-2.1.2/gems/web-console-2.1.1/lib/web_console/templates/main.js within layouts/javascript (0.5ms)
+  Rendered /home/mariam/.rvm/gems/ruby-2.1.2/gems/web-console-2.1.1/lib/web_console/templates/error_page.js within layouts/javascript (0.5ms)
+  Rendered /home/mariam/.rvm/gems/ruby-2.1.2/gems/web-console-2.1.1/lib/web_console/templates/index.html (96.1ms)
+
+
+Started POST "/api/records/get_records_by_email" for 127.0.0.1 at 2015-03-09 21:35:42 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::RecordsController#get_records_by_email as JSON
+  Parameters: {"email"=>"mariam@gmail.com"}
+  [1m[35mRecord Load (0.2ms)[0m  SELECT  "records".* FROM "records"  ORDER BY "records"."id" ASC LIMIT 1
+  Rendered api/records/get_records_by_email.json.rabl (3.4ms)
+Completed 200 OK in 90ms (Views: 31.4ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/api/records/get_records_by_email" for 127.0.0.1 at 2015-03-09 21:36:02 +0200
+Processing by Api::RecordsController#get_records_by_email as JSON
+  Parameters: {"email"=>"mari@gmail.com"}
+  [1m[36mRecord Load (0.3ms)[0m  [1mSELECT  "records".* FROM "records"  ORDER BY "records"."id" ASC LIMIT 1[0m
+  Rendered api/records/get_records_by_email.json.rabl (30.0ms)
+Completed 200 OK in 40ms (Views: 32.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/records/get_records_by_email" for 127.0.0.1 at 2015-03-09 21:36:29 +0200
+Processing by Api::RecordsController#get_records_by_email as JSON
+  Parameters: {"email"=>"mari@gmail.com"}
+  [1m[35mRecord Load (0.3ms)[0m  SELECT  "records".* FROM "records" WHERE "records"."email" = ? LIMIT 1  [["email", "mari@gmail.com"]]
+  Rendered api/records/get_records_by_email.json.rabl (0.5ms)
+Completed 200 OK in 64ms (Views: 21.0ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/records/get_records_by_email" for 127.0.0.1 at 2015-03-09 21:36:34 +0200
+Processing by Api::RecordsController#get_records_by_email as JSON
+  Parameters: {"email"=>"mariam@gmail.com"}
+  [1m[36mRecord Load (0.1ms)[0m  [1mSELECT  "records".* FROM "records" WHERE "records"."email" = ? LIMIT 1[0m  [["email", "mariam@gmail.com"]]
+  Rendered api/records/get_records_by_email.json.rabl (1.3ms)
+Completed 200 OK in 27ms (Views: 9.5ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/records/save_record" for 127.0.0.1 at 2015-03-09 21:39:06 +0200
+Processing by Api::RecordsController#save_record as JSON
+  Parameters: {"email"=>"mariam@gmail.com", "level"=>"3", "time"=>"4", "score"=>"5", "clicks"=>"6"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (3.6ms)[0m  [1mINSERT INTO "records" ("time", "score", "level", "clicks", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["time", 4], ["score", 5], ["level", 3], ["clicks", 6], ["email", "mariam@gmail.com"], ["created_at", "2015-03-09 19:39:07.016497"], ["updated_at", "2015-03-09 19:39:07.016497"]]
+  [1m[35m (11.0ms)[0m  commit transaction
+Completed 500 Internal Server Error in 62ms
+
+ActionView::MissingTemplate (Missing template api/records/save_record, api/base/save_record, application/save_record with {:locale=>[:en], :formats=>[:json], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder, :rabl]}. Searched in:
+  * "/home/mariam/sprint/K-12/Website/app/views"
+):
+  app/controllers/api/records_controller.rb:18:in `save_record'
+
+
+  Rendered /home/mariam/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.9ms)
+  Rendered /home/mariam/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.6ms)
+  Rendered /home/mariam/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (16.1ms)
+  Rendered /home/mariam/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (68.0ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0x00000004137398 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x00000004137078 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x0000000412eec8 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/api/records/save_record" for 127.0.0.1 at 2015-03-09 21:39:39 +0200
+Processing by Api::RecordsController#save_record as JSON
+  Parameters: {"email"=>"mariam@gmail.com", "level"=>"3", "time"=>"4", "score"=>"5", "clicks"=>"6"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "records" ("time", "score", "level", "clicks", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["time", 4], ["score", 5], ["level", 3], ["clicks", 6], ["email", "mariam@gmail.com"], ["created_at", "2015-03-09 19:39:39.693422"], ["updated_at", "2015-03-09 19:39:39.693422"]]
+  [1m[36m (18.5ms)[0m  [1mcommit transaction[0m
+  Rendered api/records/save_record.json.rabl (0.7ms)
+Completed 201 Created in 26ms (Views: 2.9ms | ActiveRecord: 19.7ms)
+
+
+Started POST "/api/records/get_records_by_email" for 127.0.0.1 at 2015-03-09 21:39:52 +0200
+Processing by Api::RecordsController#get_records_by_email as JSON
+  Parameters: {"email"=>"mariam@gmail.com"}
+  [1m[35mRecord Load (0.3ms)[0m  SELECT  "records".* FROM "records" WHERE "records"."email" = ? LIMIT 1  [["email", "mariam@gmail.com"]]
+  Rendered api/records/get_records_by_email.json.rabl (5.3ms)
+Completed 200 OK in 14ms (Views: 7.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/records/get_records_by_email" for 127.0.0.1 at 2015-03-09 21:40:28 +0200
+Processing by Api::RecordsController#get_records_by_email as JSON
+  Parameters: {"email"=>"mariam@gmail.com"}
+  [1m[36mRecord Load (0.3ms)[0m  [1mSELECT "records".* FROM "records" WHERE "records"."email" = ?[0m  [["email", "mariam@gmail.com"]]
+  Rendered api/records/get_records_by_email.json.rabl (17.5ms)
+Completed 200 OK in 46ms (Views: 35.6ms | ActiveRecord: 1.0ms)

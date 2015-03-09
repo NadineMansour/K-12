@@ -1,4 +1,15 @@
 Rails.application.routes.draw do
+
+    namespace :api, defaults: { format: :json } do
+      resources :records do
+        collection do
+          post 'get_records_by_email'
+          post 'save_record'
+        end
+      end
+
+    end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
