@@ -52,6 +52,7 @@ public class PlayerScript : MonoBehaviour {
 		}
 
 		detector ();
+
 	}
 	
 	
@@ -131,8 +132,8 @@ public class PlayerScript : MonoBehaviour {
 
 	void PointRotator()
 	{
-		Vector3 pointToRotate = new Vector3 (9, 1.5f, 0);
 		Vector3 pivotPoint = linePositions [0];
+		Vector3 pointToRotate = new Vector3 (9, pivotPoint.y, 0);
 		float Nx = (pointToRotate.x - pivotPoint.x);
 		float Ny = (pointToRotate.y - pivotPoint.y);
 		float angle1 = angle * Mathf.PI / 180.0f;
@@ -161,11 +162,14 @@ public class PlayerScript : MonoBehaviour {
 	void detector()
 	{
 		RaycastHit hit;
-		if (Physics.Raycast (linePositions [0], linePositions [1], out hit)) {
-			//linePositions[1] = hit.transform.position;
-			SetLightBeam();
+		if (Physics.Linecast (linePositions [0], linePositions [1], out hit)) {
+			if (hit.collider.tag == "Target")
+			{
+				linePositions[1] = hit.point;
+				SetLightBeam();
+			}
 		} else {
-
+			PointChecker();
 		}
 		
 	}
