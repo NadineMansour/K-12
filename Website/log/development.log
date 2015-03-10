@@ -687,3 +687,101 @@ Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 
 
 
 Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-10 18:23:00 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.4ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_installs_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_installs_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_installs_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_installs_on_email' AND type='index'
+
+  [1m[36m (0.3ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_students_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_students_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_students_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_students_on_email' AND type='index'
+
+
+
+Started POST "/api/records/get_records_by_email" for 127.0.0.1 at 2015-03-10 21:50:09 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::RecordsController#get_records_by_email as JSON
+  Parameters: {"email"=>"mariam@gmail.com"}
+  [1m[35mRecord Load (2.1ms)[0m  SELECT "records".* FROM "records" WHERE "records"."email" = ?  [["email", "mariam@gmail.com"]]
+  Rendered api/records/get_records_by_email.json.rabl (35.9ms)
+Completed 200 OK in 212ms (Views: 96.3ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/api/records/save_record" for 127.0.0.1 at 2015-03-10 21:50:18 +0200
+Processing by Api::RecordsController#save_record as JSON
+  Parameters: {"email"=>"mariam@gmail.com"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  INSERT INTO "records" ("email", "created_at", "updated_at") VALUES (?, ?, ?)  [["email", "mariam@gmail.com"], ["created_at", "2015-03-10 19:50:18.113499"], ["updated_at", "2015-03-10 19:50:18.113499"]]
+  [1m[36m (55.6ms)[0m  [1mcommit transaction[0m
+  Rendered api/records/save_record.json.rabl (1.5ms)
+Completed 201 Created in 136ms (Views: 16.5ms | ActiveRecord: 61.5ms)
+
+
+Started POST "/api/records/save_record" for 127.0.0.1 at 2015-03-10 21:50:57 +0200
+Processing by Api::RecordsController#save_record as JSON
+  Parameters: {"email"=>"mariam@gmail.com", "record"=>"1", "score"=>"8", "level"=>"3", "clicks"=>"5"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "records" ("score", "level", "clicks", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["score", 8], ["level", 3], ["clicks", 5], ["email", "mariam@gmail.com"], ["created_at", "2015-03-10 19:50:57.945504"], ["updated_at", "2015-03-10 19:50:57.945504"]]
+  [1m[35m (57.0ms)[0m  commit transaction
+  Rendered api/records/save_record.json.rabl (0.6ms)
+Completed 201 Created in 97ms (Views: 24.3ms | ActiveRecord: 58.5ms)
+
+
+Started POST "/api/records/get_records_by_email" for 127.0.0.1 at 2015-03-10 21:51:14 +0200
+Processing by Api::RecordsController#get_records_by_email as JSON
+  Parameters: {"email"=>"mariam@gmail.com"}
+  [1m[36mRecord Load (7.5ms)[0m  [1mSELECT "records".* FROM "records" WHERE "records"."email" = ?[0m  [["email", "mariam@gmail.com"]]
+  Rendered api/records/get_records_by_email.json.rabl (11.7ms)
+Completed 200 OK in 36ms (Views: 26.6ms | ActiveRecord: 7.5ms)
+  [1m[36mRecord Load (4.7ms)[0m  [1mSELECT "records".* FROM "records"[0m
+
+
+Started POST "/api/records/get_records_by_email" for 127.0.0.1 at 2015-03-10 21:52:44 +0200
+Processing by Api::RecordsController#get_records_by_email as JSON
+  Parameters: {"email"=>"mariam@gmail.com"}
+  [1m[35mRecord Load (6.4ms)[0m  SELECT "records".* FROM "records" WHERE "records"."email" = ?  [["email", "mariam@gmail.com"]]
+  Rendered api/records/get_records_by_email.json.rabl (9.1ms)
+Completed 200 OK in 27ms (Views: 18.8ms | ActiveRecord: 6.4ms)
+
+
+Started POST "/api/records/save_record" for 127.0.0.1 at 2015-03-10 21:52:54 +0200
+Processing by Api::RecordsController#save_record as JSON
+  Parameters: {"email"=>"mariam@gmail.com", "record"=>"666", "score"=>"8", "level"=>"3", "clicks"=>"5"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (3.9ms)[0m  INSERT INTO "records" ("score", "level", "clicks", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["score", 8], ["level", 3], ["clicks", 5], ["email", "mariam@gmail.com"], ["created_at", "2015-03-10 19:52:54.998977"], ["updated_at", "2015-03-10 19:52:54.998977"]]
+  [1m[36m (27.5ms)[0m  [1mcommit transaction[0m
+  Rendered api/records/save_record.json.rabl (0.5ms)
+Completed 201 Created in 59ms (Views: 17.0ms | ActiveRecord: 31.6ms)
+
+
+Started POST "/api/records/get_records_by_email" for 127.0.0.1 at 2015-03-10 21:53:00 +0200
+Processing by Api::RecordsController#get_records_by_email as JSON
+  Parameters: {"email"=>"mariam@gmail.com"}
+  [1m[35mRecord Load (5.3ms)[0m  SELECT "records".* FROM "records" WHERE "records"."email" = ?  [["email", "mariam@gmail.com"]]
+  Rendered api/records/get_records_by_email.json.rabl (8.2ms)
+Completed 200 OK in 27ms (Views: 19.2ms | ActiveRecord: 5.3ms)
