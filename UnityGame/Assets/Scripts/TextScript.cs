@@ -39,7 +39,7 @@ public class TextScript : MonoBehaviour {
 
 			}
 		} else
-			SetText ("");
+			SetText ("Congrats!! People of planet Redo thank you for enlightening their planet");
 
 	}
 }
