@@ -15,6 +15,7 @@ public class PlayerScript : MonoBehaviour {
 	private float angle;
 	private static bool gameOver;
 	public GameObject targetHalo;
+	public GameObject toLevelsButton;
 
 	void SetLightBeam()
 	{
@@ -33,6 +34,7 @@ public class PlayerScript : MonoBehaviour {
 		linePositions.Add (end);
 		gameOver = false;
 		targetHalo.SetActive(false);
+		toLevelsButton.SetActive(false);
 		SetLightBeam ();
 
 	}
@@ -40,6 +42,7 @@ public class PlayerScript : MonoBehaviour {
 	void EndGame()
 	{
 		targetHalo.SetActive (true);
+		toLevelsButton.SetActive(true);
 	}
 
 	
