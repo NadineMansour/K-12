@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
+using System.Collections.Generic;
 
 public class PlayerScript : MonoBehaviour {
 
@@ -8,15 +10,35 @@ public class PlayerScript : MonoBehaviour {
 	public static bool down;
 	public static bool RUp;
 	public static bool RDown;
-	int r1 = 0;
-	void Start () {
-		
+	public LineRenderer lightBeam;
+	private List <Vector3> linePositions;
+	private float angle;
+	private bool gameOver;
+
+	void SetLightBeam()
+	{
+		for (int i = 0; i < linePositions.Count; i++) {
+			lightBeam.SetPosition(i, linePositions[i]);
+		}
 	}
-	
-	// Update is called once per frame
+
+
+	void Start () {
+		linePositions = new List<Vector3> ();
+		Vector3 start = transform.position;
+		Vector3 end = start;
+		end.x = 9;
+		linePositions.Add (start);
+		linePositions.Add (end);
+		gameOver = false;
+
+		SetLightBeam ();
+
+	}
+
 	
 	void Update () {
-		//print (Time.realtimeSinceStartup);
+
 		if (up) {
 			MoveUp();
 		}
@@ -29,6 +51,9 @@ public class PlayerScript : MonoBehaviour {
 		if (RDown) {
 			RotateDown();
 		}
+
+		detector ();
+
 	}
 	
 	
@@ -65,14 +90,22 @@ public class PlayerScript : MonoBehaviour {
 	}
 	
 	public  void MoveUp(){
-		if (transform.position.y+ renderer.bounds.size.y/2.0f< rail.renderer.bounds.size.y/2.0f ) {
+		if (transform.position.y+ renderer.bounds.size.y/2.0f< rail.renderer.bounds.size.y/2.0f && !gameOver) {
 			transform.position = transform.position+new Vector3(0, 0.05f, 0);
+			for (int i = 0; i < linePositions.Count; i++) {
+				linePositions[i] += new Vector3(0, 0.05f, 0);
+			}
+			SetLightBeam();
 		}
 	}
 	
 	public void MoveDown(){
-		if (transform.position.y- renderer.bounds.size.y/2.0f> rail.renderer.bounds.size.y/-2.0f) {
+		if (transform.position.y- renderer.bounds.size.y/2.0f> rail.renderer.bounds.size.y/-2.0f && !gameOver) {
 			transform.position = transform.position-new Vector3(0, 0.05f, 0);
+			for (int i = 0; i < linePositions.Count; i++) {
+				linePositions[i] -= new Vector3(0, 0.05f, 0);
+			}
+			SetLightBeam();
 		}
 	}
 	
@@ -80,8 +113,10 @@ public class PlayerScript : MonoBehaviour {
 		
 		float zz = transform.eulerAngles.z;
 		print (zz+ " Up");
-		if (zz < 60 || zz >=300) {
+		if ((zz < 60 || zz >=300) && !gameOver) {
 			transform.Rotate (new Vector3(0,0,0.5f));
+			angle+= 0.5f;
+			RotateLightBeam();
 		}
 		
 	}
@@ -89,8 +124,56 @@ public class PlayerScript : MonoBehaviour {
 	public void RotateDown(){
 		float zz = transform.eulerAngles.z;
 		print (zz+" Down");
-		if (zz<=61 || zz > 301) {
+		if ((zz<=61 || zz > 301) && !gameOver) {
 			transform.Rotate (new Vector3 (0, 0, -0.5f));
+			angle-= 0.5f;
+			RotateLightBeam();
 		}
 	}
+
+	void PointRotator()
+	{
+		Vector3 pivotPoint = linePositions [0];
+		Vector3 pointToRotate = new Vector3 (9, pivotPoint.y, 0);
+		float Nx = (pointToRotate.x - pivotPoint.x);
+		float Ny = (pointToRotate.y - pivotPoint.y);
+		float angle1 = angle * Mathf.PI / 180.0f;
+		linePositions[1] = new Vector3((float)(Mathf.Cos(angle1) * Nx - Mathf.Sin(angle1) * Ny + pivotPoint.x), (float)(Mathf.Sin(angle1) * Nx + Mathf.Cos(angle1) * Ny + pivotPoint.y), 0);
+	}
+
+	void PointChecker()
+	{
+		Vector3 endP = linePositions [1];
+		if (endP.x < 9) {
+			Vector3 startP = linePositions[0];
+			float slope = (endP.y - startP.y)/(endP.x - startP.x);
+			float yIntercept = startP.y - startP.x*slope;
+			float newY = slope*9.0f + yIntercept;
+			linePositions[1] = new Vector3(9.0f, newY, 0.0f);
+		}
+	}
+
+	void RotateLightBeam()
+	{
+		PointRotator ();
+		PointChecker ();
+		SetLightBeam ();
+	}
+
+	void detector()
+	{
+		RaycastHit hit;
+		if (Physics.Linecast (linePositions [0], linePositions [1], out hit)) {
+			if (hit.collider.tag == "Target")
+			{
+				linePositions[1] = hit.point;
+				SetLightBeam();
+				gameOver = true;
+			}
+		} else {
+			PointChecker();
+		}
+		
+	}
+
 }
