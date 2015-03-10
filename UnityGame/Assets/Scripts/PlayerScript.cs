@@ -50,6 +50,8 @@ public class PlayerScript : MonoBehaviour {
 		if (RDown) {
 			RotateDown();
 		}
+
+		detector ();
 	}
 	
 	
@@ -137,9 +139,35 @@ public class PlayerScript : MonoBehaviour {
 		linePositions[1] = new Vector3((float)(Mathf.Cos(angle1) * Nx - Mathf.Sin(angle1) * Ny + pivotPoint.x), (float)(Mathf.Sin(angle1) * Nx + Mathf.Cos(angle1) * Ny + pivotPoint.y), 0);
 	}
 
+	void PointChecker()
+	{
+		Vector3 endP = linePositions [1];
+		if (endP.x < 9) {
+			Vector3 startP = linePositions[0];
+			float slope = (endP.y - startP.y)/(endP.x - startP.x);
+			float yIntercept = startP.y - startP.x*slope;
+			float newY = slope*9.0f + yIntercept;
+			linePositions[1] = new Vector3(9.0f, newY, 0.0f);
+		}
+	}
+
 	void RotateLightBeam()
 	{
 		PointRotator ();
+		PointChecker ();
 		SetLightBeam ();
 	}
+
+	void detector()
+	{
+		RaycastHit hit;
+		if (Physics.Raycast (linePositions [0], linePositions [1], out hit)) {
+			//linePositions[1] = hit.transform.position;
+			SetLightBeam();
+		} else {
+
+		}
+		
+	}
+
 }
