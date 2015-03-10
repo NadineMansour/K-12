@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -11,7 +12,8 @@ public class PlayerScript : MonoBehaviour {
 	public static bool RDown;
 	public LineRenderer lightBeam;
 	private List <Vector3> linePositions;
-	int r1 = 0;
+	private float angle;
+	//private Vector3 pivot;
 
 	void SetLightBeam()
 	{
@@ -23,9 +25,10 @@ public class PlayerScript : MonoBehaviour {
 
 	void Start () {
 		linePositions = new List<Vector3> ();
+		//pivot = new Vector3 (-4.5f, 1.5f, 0);
 		Vector3 start = transform.position;
-		Vector3 end = transform.position+new Vector3(13, 0, 0);
-		print (start);
+		Vector3 end = start;
+		end.x = 9;
 		linePositions.Add (start);
 		linePositions.Add (end);
 
@@ -49,6 +52,8 @@ public class PlayerScript : MonoBehaviour {
 		if (RDown) {
 			RotateDown();
 		}
+
+		print (angle);
 	}
 	
 	
@@ -110,6 +115,10 @@ public class PlayerScript : MonoBehaviour {
 		print (zz+ " Up");
 		if (zz < 60 || zz >=300) {
 			transform.Rotate (new Vector3(0,0,0.5f));
+			angle+= 0.5f;
+			//angle = zz;
+			print (angle);
+			RotateLightBeam();
 		}
 		
 	}
@@ -119,6 +128,42 @@ public class PlayerScript : MonoBehaviour {
 		print (zz+" Down");
 		if (zz<=61 || zz > 301) {
 			transform.Rotate (new Vector3 (0, 0, -0.5f));
+			angle-= 0.5f;
+			//angle = zz;
+			print (angle);
+			RotateLightBeam();
 		}
+	}
+
+	/*
+
+	Vector3 rotationPoint(int i)
+	{
+		float ToRadians = Mathf.PI/180.0f;
+		float angle1 = angle * ToRadians;
+		float point_x = linePositions [i].x;
+		float point_y = linePositions [i].y;
+		float x = (float) (Mathf.Cos (angle1) * point_x - Mathf.Sin (angle1) * point_x);
+		float y = (float) (Mathf.Sin (angle1) * point_x + Mathf.Cos (angle1) * point_y);
+		return (new Vector3 (x,y,0));
+	}
+	*/
+
+	void PointRotator()
+	{
+		Vector3 pointToRotate = new Vector3 (9, 1.5f, 0);
+		Vector3 pivotPoint = linePositions [0];
+		float Nx = (pointToRotate.x - pivotPoint.x);
+		float Ny = (pointToRotate.y - pivotPoint.y);
+		float angle1 = angle * Mathf.PI / 180.0f;
+		linePositions[1] = new Vector3((float)(Mathf.Cos(angle1) * Nx - Mathf.Sin(angle1) * Ny + pivotPoint.x), (float)(Mathf.Sin(angle1) * Nx + Mathf.Cos(angle1) * Ny + pivotPoint.y), 0);
+	}
+
+	void RotateLightBeam()
+	{
+		PointRotator ();
+		//linePositions [0] = rotationPoint (0);
+		//linePositions [1] = rotationPoint (1);
+		SetLightBeam ();
 	}
 }
