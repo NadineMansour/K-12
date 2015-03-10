@@ -1,18 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ToLevels : MonoBehaviour {
+public class Text2Script : MonoBehaviour {
 
+	// Use this for initialization
 	void Start () {
 	
 	}
-
-	public void OnMouseDown() {
-		Application.LoadLevel("Level2");
-	}
-
-
-
+	
 	// Update is called once per frame
 	void Update () {
 	

@@ -53,6 +53,8 @@
      <Compile Include="Assets\Scripts\TextScript.cs" />
      <Compile Include="Assets\Scripts\ToLevels.cs" />
      <Compile Include="Assets\Scripts\UpMove.cs" />
+     <Compile Include="Assets\Text2.cs" />
+     <Compile Include="Assets\Text2Script.cs" />
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Basic.shader" />
      <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-BasicOutline.shader" />
