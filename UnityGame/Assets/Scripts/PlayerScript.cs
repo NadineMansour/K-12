@@ -13,7 +13,7 @@ public class PlayerScript : MonoBehaviour {
 	public LineRenderer lightBeam;
 	private List <Vector3> linePositions;
 	private float angle;
-	private bool gameOver;
+	private static bool gameOver;
 	public GameObject targetHalo;
 
 	void SetLightBeam()
@@ -64,7 +64,7 @@ public class PlayerScript : MonoBehaviour {
 
 	}
 
-	public bool isGameOver()
+	public static bool isGameOver()
 	{
 		return gameOver;
 	}
