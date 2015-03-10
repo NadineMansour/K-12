@@ -22,4 +22,668 @@ Migrating to CreateRecords (20150309190114)
   [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
   [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
   [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateStudents (20150310155657)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "students" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "school" varchar, "student_class" varchar, "grade" varchar, "student_name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150310155657"]]
+  [1m[36m (1.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/" for ::1 at 2015-03-10 18:01:07 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/railties-4.2.0/lib/rails/templates/rails/welcome/index.html.erb (2.1ms)
+Completed 200 OK in 64ms (Views: 40.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-03-10 18:01:08 +0200
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/railties-4.2.0/lib/rails/templates/rails/welcome/index.html.erb (0.0ms)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/students/sign_up" for ::1 at 2015-03-10 18:01:12 +0200
+
+ActionController::RoutingError (No route matches [GET] "/students/sign_up"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.1) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/Apple/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/Apple/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/Apple/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (27.5ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.6ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (92.2ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/web-console-2.1.1/lib/web_console/templates/_markup.html (1.0ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/web-console-2.1.1/lib/web_console/templates/style.css within layouts/inlined_string (0.3ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/web-console-2.1.1/lib/web_console/templates/_inner_console_markup.html within layouts/inlined_string (0.3ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/web-console-2.1.1/lib/web_console/templates/_prompt_box_markup.html within layouts/inlined_string (0.3ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/web-console-2.1.1/lib/web_console/templates/console.js within layouts/javascript (20.8ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/web-console-2.1.1/lib/web_console/templates/main.js within layouts/javascript (0.4ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/web-console-2.1.1/lib/web_console/templates/error_page.js within layouts/javascript (0.4ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/web-console-2.1.1/lib/web_console/templates/index.html (68.9ms)
+
+
+Started GET "/students/sign_up" for ::1 at 2015-03-10 18:02:04 +0200
+
+RuntimeError (Student does not respond to 'devise' method. This usually means you haven't loaded your ORM file or it's being loaded too late. To fix it, be sure to require 'devise/orm/YOUR_ORM' inside 'config/initializers/devise.rb' or before your application definition in 'config/application.rb'):
+  config/routes.rb:2:in `block in <top (required)>'
+  config/routes.rb:1:in `<top (required)>'
+
+
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.6ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (26.1ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/web-console-2.1.1/lib/web_console/templates/_markup.html (0.3ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/web-console-2.1.1/lib/web_console/templates/style.css within layouts/inlined_string (0.6ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/web-console-2.1.1/lib/web_console/templates/_inner_console_markup.html within layouts/inlined_string (0.3ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/web-console-2.1.1/lib/web_console/templates/_prompt_box_markup.html within layouts/inlined_string (0.3ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/web-console-2.1.1/lib/web_console/templates/console.js within layouts/javascript (21.7ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/web-console-2.1.1/lib/web_console/templates/main.js within layouts/javascript (0.4ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/web-console-2.1.1/lib/web_console/templates/error_page.js within layouts/javascript (0.5ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/web-console-2.1.1/lib/web_console/templates/index.html (41.2ms)
+
+
+Started GET "/students/sign_up" for ::1 at 2015-03-10 18:02:14 +0200
+
+RuntimeError (Student does not respond to 'devise' method. This usually means you haven't loaded your ORM file or it's being loaded too late. To fix it, be sure to require 'devise/orm/YOUR_ORM' inside 'config/initializers/devise.rb' or before your application definition in 'config/application.rb'):
+  config/routes.rb:2:in `block in <top (required)>'
+  config/routes.rb:1:in `<top (required)>'
+
+
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.9ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (21.6ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/web-console-2.1.1/lib/web_console/templates/_markup.html (0.4ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/web-console-2.1.1/lib/web_console/templates/style.css within layouts/inlined_string (0.3ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/web-console-2.1.1/lib/web_console/templates/_inner_console_markup.html within layouts/inlined_string (0.3ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/web-console-2.1.1/lib/web_console/templates/_prompt_box_markup.html within layouts/inlined_string (0.3ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/web-console-2.1.1/lib/web_console/templates/console.js within layouts/javascript (18.5ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/web-console-2.1.1/lib/web_console/templates/main.js within layouts/javascript (0.3ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/web-console-2.1.1/lib/web_console/templates/error_page.js within layouts/javascript (0.4ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/web-console-2.1.1/lib/web_console/templates/index.html (40.0ms)
+
+
+Started GET "/students/sign_up" for ::1 at 2015-03-10 18:03:00 +0200
+
+ActionController::RoutingError (No route matches [GET] "/students/sign_up"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.1) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/Apple/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/Apple/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/Apple/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (18.8ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/web-console-2.1.1/lib/web_console/templates/_markup.html (0.3ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/web-console-2.1.1/lib/web_console/templates/style.css within layouts/inlined_string (0.2ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/web-console-2.1.1/lib/web_console/templates/_inner_console_markup.html within layouts/inlined_string (0.2ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/web-console-2.1.1/lib/web_console/templates/_prompt_box_markup.html within layouts/inlined_string (0.2ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/web-console-2.1.1/lib/web_console/templates/console.js within layouts/javascript (15.2ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/web-console-2.1.1/lib/web_console/templates/main.js within layouts/javascript (0.3ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/web-console-2.1.1/lib/web_console/templates/error_page.js within layouts/javascript (0.4ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/web-console-2.1.1/lib/web_console/templates/index.html (34.0ms)
+
+
+Started GET "/" for ::1 at 2015-03-10 18:11:11 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+):
+  activerecord (4.2.0) lib/active_record/migration.rb:393:in `check_pending!'
+  activerecord (4.2.0) lib/active_record/migration.rb:374:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:88:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:88:in `_run_callbacks'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:734:in `_run_call_callbacks'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.1.1) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/Apple/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/Apple/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/Apple/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.9ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (23.1ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/web-console-2.1.1/lib/web_console/templates/_markup.html (0.3ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/web-console-2.1.1/lib/web_console/templates/style.css within layouts/inlined_string (0.3ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/web-console-2.1.1/lib/web_console/templates/_inner_console_markup.html within layouts/inlined_string (0.3ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/web-console-2.1.1/lib/web_console/templates/_prompt_box_markup.html within layouts/inlined_string (0.2ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/web-console-2.1.1/lib/web_console/templates/console.js within layouts/javascript (19.3ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/web-console-2.1.1/lib/web_console/templates/main.js within layouts/javascript (0.3ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/web-console-2.1.1/lib/web_console/templates/error_page.js within layouts/javascript (0.4ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/web-console-2.1.1/lib/web_console/templates/index.html (43.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to DeviseCreateInstalls (20150310160531)
+  [1m[35m (0.1ms)[0m  begin transaction
+DEPRECATION WARNING: `#timestamp` was called without specifying an option for `null`. In Rails 5, this behavior will change to `null: false`. You should manually specify `null: true` to prevent the behavior of your existing migrations from changing. (called from block in change at /Users/Apple/Desktop/K-12/Website/db/migrate/20150310160531_devise_create_installs.rb:34)
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "installs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.4ms)[0m  [1mCREATE UNIQUE INDEX "index_installs_on_email" ON "installs" ("email")[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_installs_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_installs_on_email' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1mCREATE UNIQUE INDEX "index_installs_on_reset_password_token" ON "installs" ("reset_password_token")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150310160531"]]
+  [1m[36m (2.3ms)[0m  [1mcommit transaction[0m
+Migrating to AddDeviseToStudents (20150310160919)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "students" ADD "email" varchar DEFAULT '' NOT NULL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "students" ADD "encrypted_password" varchar DEFAULT '' NOT NULL
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "students" ADD "reset_password_token" varchar[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "students" ADD "reset_password_sent_at" datetime
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "students" ADD "remember_created_at" datetime[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "students" ADD "sign_in_count" integer DEFAULT 0 NOT NULL
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "students" ADD "current_sign_in_at" datetime[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "students" ADD "last_sign_in_at" datetime
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "students" ADD "current_sign_in_ip" varchar[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "students" ADD "last_sign_in_ip" varchar
+  [1m[36m (0.3ms)[0m  [1mCREATE UNIQUE INDEX "index_students_on_email" ON "students" ("email")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_students_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_students_on_email' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1mCREATE UNIQUE INDEX "index_students_on_reset_password_token" ON "students" ("reset_password_token")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150310160919"]]
+  [1m[36m (3.7ms)[0m  [1mcommit transaction[0m
   [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_installs_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_installs_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_installs_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_installs_on_email' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_students_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_students_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_students_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_students_on_email' AND type='index'
+
+
+
+Started GET "/" for ::1 at 2015-03-10 18:11:40 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/railties-4.2.0/lib/rails/templates/rails/welcome/index.html.erb (1.6ms)
+Completed 200 OK in 19ms (Views: 8.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/students/sign_up" for ::1 at 2015-03-10 18:11:43 +0200
+
+ActionController::RoutingError (No route matches [GET] "/students/sign_up"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.1) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/Apple/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/Apple/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/Apple/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.5ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (7.9ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (65.3ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/web-console-2.1.1/lib/web_console/templates/_markup.html (0.4ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/web-console-2.1.1/lib/web_console/templates/style.css within layouts/inlined_string (0.4ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/web-console-2.1.1/lib/web_console/templates/_inner_console_markup.html within layouts/inlined_string (0.3ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/web-console-2.1.1/lib/web_console/templates/_prompt_box_markup.html within layouts/inlined_string (0.3ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/web-console-2.1.1/lib/web_console/templates/console.js within layouts/javascript (20.2ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/web-console-2.1.1/lib/web_console/templates/main.js within layouts/javascript (7.8ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/web-console-2.1.1/lib/web_console/templates/error_page.js within layouts/javascript (0.4ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/web-console-2.1.1/lib/web_console/templates/index.html (52.2ms)
+
+
+Started GET "/student/sign_up" for ::1 at 2015-03-10 18:11:48 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (5.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (256.0ms)
+Completed 200 OK in 1721ms (Views: 1703.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for ::1 at 2015-03-10 18:11:50 +0200
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-10 18:11:50 +0200
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-10 18:11:50 +0200
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-03-10 18:11:50 +0200
+
+
+Started GET "/student" for ::1 at 2015-03-10 18:18:09 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActionController::RoutingError (No route matches [GET] "/student"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.1) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/Apple/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/Apple/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/Apple/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.5ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (7.8ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (12.2ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (53.2ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/web-console-2.1.1/lib/web_console/templates/_markup.html (0.3ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/web-console-2.1.1/lib/web_console/templates/style.css within layouts/inlined_string (0.3ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/web-console-2.1.1/lib/web_console/templates/_inner_console_markup.html within layouts/inlined_string (0.3ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/web-console-2.1.1/lib/web_console/templates/_prompt_box_markup.html within layouts/inlined_string (0.3ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/web-console-2.1.1/lib/web_console/templates/console.js within layouts/javascript (19.2ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/web-console-2.1.1/lib/web_console/templates/main.js within layouts/javascript (0.3ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/web-console-2.1.1/lib/web_console/templates/error_page.js within layouts/javascript (0.4ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/web-console-2.1.1/lib/web_console/templates/index.html (42.4ms)
+
+
+Started GET "/student/sign_up" for ::1 at 2015-03-10 18:18:14 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (4.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (25.8ms)
+Completed 200 OK in 105ms (Views: 86.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for ::1 at 2015-03-10 18:18:14 +0200
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-10 18:18:14 +0200
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-10 18:18:14 +0200
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-03-10 18:18:14 +0200
+
+
+Started POST "/student" for ::1 at 2015-03-10 18:18:24 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Fc9gb/PMW6wrrU12dpQIxGAW/Escv0G7pkM2q9pUvDIcipg9SsXxcHNpYue6HImBaVUAQvxCquzWAP8uJ/I60g==", "student"=>{"student_name"=>"", "student_class"=>"", "email"=>"mido_2ofa@hotmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "school"=>"", "grade"=>""}, "commit"=>"Sign up"}
+Unpermitted parameter: student_name
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mStudent Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "students" WHERE "students"."email" = 'mido_2ofa@hotmail.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Completed 500 Internal Server Error in 145ms
+
+NoMethodError (undefined method `name' for #<Student:0x007fe70e9e6108>):
+  activemodel (4.2.0) lib/active_model/attribute_methods.rb:433:in `method_missing'
+  activemodel (4.2.0) lib/active_model/validator.rb:149:in `block in validate'
+  activemodel (4.2.0) lib/active_model/validator.rb:148:in `each'
+  activemodel (4.2.0) lib/active_model/validator.rb:148:in `validate'
+  activerecord (4.2.0) lib/active_record/validations/presence.rb:5:in `validate'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:450:in `public_send'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:450:in `block in make_lambda'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:189:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:189:in `block in simple'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:190:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:190:in `block in simple'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:182:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:182:in `block in conditional'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:182:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:182:in `block in conditional'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:182:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:182:in `block in conditional'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:182:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:182:in `block in conditional'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:182:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:182:in `block in conditional'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:92:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:92:in `_run_callbacks'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:734:in `_run_validate_callbacks'
+  activemodel (4.2.0) lib/active_model/validations.rb:395:in `run_validations!'
+  activemodel (4.2.0) lib/active_model/validations/callbacks.rb:113:in `block in run_validations!'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:169:in `block in halting'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:169:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:169:in `block in halting'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:92:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:92:in `_run_callbacks'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:734:in `_run_validation_callbacks'
+  activemodel (4.2.0) lib/active_model/validations/callbacks.rb:113:in `run_validations!'
+  activemodel (4.2.0) lib/active_model/validations.rb:334:in `valid?'
+  activerecord (4.2.0) lib/active_record/validations.rb:58:in `valid?'
+  activerecord (4.2.0) lib/active_record/validations.rb:83:in `perform_validations'
+  activerecord (4.2.0) lib/active_record/validations.rb:37:in `save'
+  activerecord (4.2.0) lib/active_record/attribute_methods/dirty.rb:21:in `save'
+  activerecord (4.2.0) lib/active_record/transactions.rb:286:in `block (2 levels) in save'
+  activerecord (4.2.0) lib/active_record/transactions.rb:347:in `block in with_transaction_returning_status'
+  activerecord (4.2.0) lib/active_record/connection_adapters/abstract/database_statements.rb:213:in `block in transaction'
+  activerecord (4.2.0) lib/active_record/connection_adapters/abstract/transaction.rb:188:in `within_new_transaction'
+  activerecord (4.2.0) lib/active_record/connection_adapters/abstract/database_statements.rb:213:in `transaction'
+  activerecord (4.2.0) lib/active_record/transactions.rb:220:in `transaction'
+  activerecord (4.2.0) lib/active_record/transactions.rb:344:in `with_transaction_returning_status'
+  activerecord (4.2.0) lib/active_record/transactions.rb:286:in `block in save'
+  activerecord (4.2.0) lib/active_record/transactions.rb:301:in `rollback_active_record_state!'
+  activerecord (4.2.0) lib/active_record/transactions.rb:285:in `save'
+  devise (3.4.1) app/controllers/devise/registrations_controller.rb:19:in `create'
+  actionpack (4.2.0) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.2.0) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.0) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.0) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:234:in `block in halting'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:151:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:151:in `block in halting_and_conditional'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:234:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:234:in `block in halting'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:169:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:169:in `block in halting'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:169:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:169:in `block in halting'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:169:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:169:in `block in halting'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:169:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:169:in `block in halting'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:151:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:151:in `block in halting_and_conditional'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:151:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:151:in `block in halting_and_conditional'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:92:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:92:in `_run_callbacks'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:734:in `_run_process_action_callbacks'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.0) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.0) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.0) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.2.0) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.0) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.0) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.0) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.0) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.0) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.0) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.0) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.2.0) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.0) lib/action_controller/metal.rb:236:in `block in action'
+  actionpack (4.2.0) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (4.2.0) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (4.2.0) lib/action_dispatch/routing/route_set.rb:42:in `serve'
+  actionpack (4.2.0) lib/action_dispatch/routing/mapper.rb:49:in `serve'
+  actionpack (4.2.0) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.0) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.0) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.0) lib/action_dispatch/routing/route_set.rb:802:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.6.0) lib/rack/etag.rb:24:in `call'
+  rack (1.6.0) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.0) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.0) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.0) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:647:in `call'
+  activerecord (4.2.0) lib/active_record/migration.rb:378:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:88:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:88:in `_run_callbacks'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:734:in `_run_call_callbacks'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.1.1) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/Apple/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/Apple/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/Apple/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.4ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (30.6ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/web-console-2.1.1/lib/web_console/templates/_markup.html (0.3ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/web-console-2.1.1/lib/web_console/templates/style.css within layouts/inlined_string (0.3ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/web-console-2.1.1/lib/web_console/templates/_inner_console_markup.html within layouts/inlined_string (0.4ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/web-console-2.1.1/lib/web_console/templates/_prompt_box_markup.html within layouts/inlined_string (0.2ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/web-console-2.1.1/lib/web_console/templates/console.js within layouts/javascript (18.0ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/web-console-2.1.1/lib/web_console/templates/main.js within layouts/javascript (0.3ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/web-console-2.1.1/lib/web_console/templates/error_page.js within layouts/javascript (0.3ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.1.2@global/gems/web-console-2.1.1/lib/web_console/templates/index.html (36.3ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_installs_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_installs_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_installs_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_installs_on_email' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_students_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_students_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_students_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_students_on_email' AND type='index'
+
+
+
+Started GET "/student/sign_up" for ::1 at 2015-03-10 18:22:49 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (4.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (33.3ms)
+Completed 200 OK in 126ms (Views: 100.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for ::1 at 2015-03-10 18:22:49 +0200
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-03-10 18:22:49 +0200
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-10 18:22:49 +0200
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-10 18:22:49 +0200
+
+
+Started POST "/student" for ::1 at 2015-03-10 18:22:59 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"i7Rk2aucvBQAUgyOnfJqlINxDuui9eShUFwP/0AXN8+C8ZyLEpUWyFiWIx9ReuvRijLy4kIID/YgH8Z6vbGxLw==", "student"=>{"student_name"=>"", "student_class"=>"", "email"=>"mido_2ofa@hotmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "school"=>"", "grade"=>""}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mStudent Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "students" WHERE "students"."email" = 'mido_2ofa@hotmail.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered devise/shared/_links.html.erb (1.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 162ms (Views: 42.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for ::1 at 2015-03-10 18:23:00 +0200
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-10 18:23:00 +0200
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-03-10 18:23:00 +0200
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-10 18:23:00 +0200
