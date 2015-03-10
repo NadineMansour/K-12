@@ -13,6 +13,7 @@ public class PlayerScript : MonoBehaviour {
 	public LineRenderer lightBeam;
 	private List <Vector3> linePositions;
 	private float angle;
+	private bool gameOver;
 
 	void SetLightBeam()
 	{
@@ -29,7 +30,7 @@ public class PlayerScript : MonoBehaviour {
 		end.x = 9;
 		linePositions.Add (start);
 		linePositions.Add (end);
-
+		gameOver = false;
 
 		SetLightBeam ();
 
@@ -89,7 +90,7 @@ public class PlayerScript : MonoBehaviour {
 	}
 	
 	public  void MoveUp(){
-		if (transform.position.y+ renderer.bounds.size.y/2.0f< rail.renderer.bounds.size.y/2.0f ) {
+		if (transform.position.y+ renderer.bounds.size.y/2.0f< rail.renderer.bounds.size.y/2.0f && !gameOver) {
 			transform.position = transform.position+new Vector3(0, 0.05f, 0);
 			for (int i = 0; i < linePositions.Count; i++) {
 				linePositions[i] += new Vector3(0, 0.05f, 0);
@@ -99,7 +100,7 @@ public class PlayerScript : MonoBehaviour {
 	}
 	
 	public void MoveDown(){
-		if (transform.position.y- renderer.bounds.size.y/2.0f> rail.renderer.bounds.size.y/-2.0f) {
+		if (transform.position.y- renderer.bounds.size.y/2.0f> rail.renderer.bounds.size.y/-2.0f && !gameOver) {
 			transform.position = transform.position-new Vector3(0, 0.05f, 0);
 			for (int i = 0; i < linePositions.Count; i++) {
 				linePositions[i] -= new Vector3(0, 0.05f, 0);
@@ -112,7 +113,7 @@ public class PlayerScript : MonoBehaviour {
 		
 		float zz = transform.eulerAngles.z;
 		print (zz+ " Up");
-		if (zz < 60 || zz >=300) {
+		if ((zz < 60 || zz >=300) && !gameOver) {
 			transform.Rotate (new Vector3(0,0,0.5f));
 			angle+= 0.5f;
 			RotateLightBeam();
@@ -123,7 +124,7 @@ public class PlayerScript : MonoBehaviour {
 	public void RotateDown(){
 		float zz = transform.eulerAngles.z;
 		print (zz+" Down");
-		if (zz<=61 || zz > 301) {
+		if ((zz<=61 || zz > 301) && !gameOver) {
 			transform.Rotate (new Vector3 (0, 0, -0.5f));
 			angle-= 0.5f;
 			RotateLightBeam();
@@ -167,6 +168,7 @@ public class PlayerScript : MonoBehaviour {
 			{
 				linePositions[1] = hit.point;
 				SetLightBeam();
+				gameOver = true;
 			}
 		} else {
 			PointChecker();
