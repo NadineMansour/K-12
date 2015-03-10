@@ -87,12 +87,20 @@ public class PlayerScript : MonoBehaviour {
 	public  void MoveUp(){
 		if (transform.position.y+ renderer.bounds.size.y/2.0f< rail.renderer.bounds.size.y/2.0f ) {
 			transform.position = transform.position+new Vector3(0, 0.05f, 0);
+			for (int i = 0; i < linePositions.Count; i++) {
+				linePositions[i] += new Vector3(0, 0.05f, 0);
+			}
+			SetLightBeam();
 		}
 	}
 	
 	public void MoveDown(){
 		if (transform.position.y- renderer.bounds.size.y/2.0f> rail.renderer.bounds.size.y/-2.0f) {
 			transform.position = transform.position-new Vector3(0, 0.05f, 0);
+			for (int i = 0; i < linePositions.Count; i++) {
+				linePositions[i] -= new Vector3(0, 0.05f, 0);
+			}
+			SetLightBeam();
 		}
 	}
 	
