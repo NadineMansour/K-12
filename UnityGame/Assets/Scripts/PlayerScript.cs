@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class PlayerScript : MonoBehaviour {
 
@@ -8,15 +9,34 @@ public class PlayerScript : MonoBehaviour {
 	public static bool down;
 	public static bool RUp;
 	public static bool RDown;
+	public LineRenderer lightBeam;
+	private List <Vector3> linePositions;
 	int r1 = 0;
-	void Start () {
-		
+
+	void SetLightBeam()
+	{
+		for (int i = 0; i < linePositions.Count; i++) {
+			lightBeam.SetPosition(i, linePositions[i]);
+		}
 	}
-	
-	// Update is called once per frame
+
+
+	void Start () {
+		linePositions = new List<Vector3> ();
+		Vector3 start = transform.position;
+		Vector3 end = transform.position+new Vector3(13, 0, 0);
+		print (start);
+		linePositions.Add (start);
+		linePositions.Add (end);
+
+
+		SetLightBeam ();
+
+	}
+
 	
 	void Update () {
-		//print (Time.realtimeSinceStartup);
+
 		if (up) {
 			MoveUp();
 		}
