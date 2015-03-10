@@ -185,6 +185,11 @@ public class PlayerScript : MonoBehaviour {
 				SetLightBeam();
 				gameOver = true;
 			}
+			if (hit.collider.tag == "Obstacle")
+			{
+				linePositions[1] = hit.point;
+				SetLightBeam();
+			}
 		} else {
 			PointChecker();
 		}
