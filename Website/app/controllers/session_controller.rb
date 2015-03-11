@@ -24,6 +24,6 @@ class SessionsController < ApplicationController
 
   def home
   	#game page
-  	redirect_to("")
+  	redirect_to("Website/app/views/home/index.html.erb")
   end
 end

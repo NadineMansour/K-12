@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   def login
-    #Login Form
+    redirect_to("/views/session")
   end
   def login_attempt
     authorized_user = student.authenticate(params[:username_or_email],params[:login_password])
@@ -24,6 +24,6 @@ class SessionsController < ApplicationController
 
   def home
   	#game page
-  	redirect_to("")
+  	redirect_to("Website/app/views/home/index.html.erb")
   end
 end
