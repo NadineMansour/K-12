@@ -23,7 +23,16 @@ public class Text2 : MonoBehaviour {
 		
 		if (PlayerScript.isGameOver ()) {
 			SetText ("Congrats!! People of planet Saharawy thank you for enlightening their planet");
-		} 
+		} else {
+			if (Time.realtimeSinceStartup < 5) 
+			{
+				SetText ("This is a blackhole that sucks light, therefore light can't pass through it to the planet.");
+			}
+			else
+			{
+				SetText ("");
+			}
+		}
 
 		
 	}
