@@ -46,15 +46,16 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Down2.cs" />
      <Compile Include="Assets\Scripts\DownMove.cs" />
      <Compile Include="Assets\Scripts\PlayerScript.cs" />
      <Compile Include="Assets\Scripts\R1Move.cs" />
      <Compile Include="Assets\Scripts\R2Move.cs" />
+     <Compile Include="Assets\Scripts\Text2.cs" />
      <Compile Include="Assets\Scripts\TextScript.cs" />
      <Compile Include="Assets\Scripts\ToLevels.cs" />
+     <Compile Include="Assets\Scripts\Up2.cs" />
      <Compile Include="Assets\Scripts\UpMove.cs" />
-     <Compile Include="Assets\Text2.cs" />
-     <Compile Include="Assets\Text2Script.cs" />
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Basic.shader" />
      <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-BasicOutline.shader" />

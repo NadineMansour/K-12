@@ -1,10 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/TextScript.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PlayerScript.cs">
     <Files>
-      <File FileName="Assets/Scripts/ToLevels.cs" Line="11" Column="32" />
-      <File FileName="Assets/Scripts/PlayerScript.cs" Line="178" Column="12" />
-      <File FileName="Assets/Scripts/TextScript.cs" Line="24" Column="18" />
+      <File FileName="Assets/Scripts/PlayerScript.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
