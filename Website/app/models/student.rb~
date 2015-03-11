@@ -1,6 +1,4 @@
-class User < ActiveRecord::Base
-  
-
+class Student < ActiveRecord::Base
   attr_accessor :login attr_accessible :username, :email, :password, :password_confirmation, :remember_me
   EMAIL_REGEX = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i
 
@@ -38,5 +36,11 @@ end
 def match_password(login_password="")
   encrypted_password == BCrypt::Engine.hash_secret(login_password, salt)
 end
+
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
+ validates_presence_of :school , :grade , :student_class , :student_name 
 
 end

@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   def login
-    redirect_to("/views/session")
+    #Login Form
   end
   def login_attempt
     authorized_user = student.authenticate(params[:username_or_email],params[:login_password])
