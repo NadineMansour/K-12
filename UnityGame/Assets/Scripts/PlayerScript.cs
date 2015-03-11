@@ -13,7 +13,9 @@ public class PlayerScript : MonoBehaviour {
 	public LineRenderer lightBeam;
 	private List <Vector3> linePositions;
 	private float angle;
-	private bool gameOver;
+	private static bool gameOver;
+	public GameObject targetHalo;
+	public GameObject toLevelsButton;
 
 	void SetLightBeam()
 	{
@@ -31,9 +33,16 @@ public class PlayerScript : MonoBehaviour {
 		linePositions.Add (start);
 		linePositions.Add (end);
 		gameOver = false;
-
+		targetHalo.SetActive(false);
+		toLevelsButton.SetActive(false);
 		SetLightBeam ();
 
+	}
+
+	void EndGame()
+	{
+		targetHalo.SetActive (true);
+		toLevelsButton.SetActive(true);
 	}
 
 	
@@ -53,9 +62,15 @@ public class PlayerScript : MonoBehaviour {
 		}
 
 		detector ();
+		if (gameOver)
+			EndGame ();
 
 	}
-	
+
+	public static bool isGameOver()
+	{
+		return gameOver;
+	}
 	
 	public static void UpTrue(){
 		up = true;
@@ -169,6 +184,11 @@ public class PlayerScript : MonoBehaviour {
 				linePositions[1] = hit.point;
 				SetLightBeam();
 				gameOver = true;
+			}
+			if (hit.collider.tag == "Obstacle")
+			{
+				linePositions[1] = hit.point;
+				SetLightBeam();
 			}
 		} else {
 			PointChecker();
