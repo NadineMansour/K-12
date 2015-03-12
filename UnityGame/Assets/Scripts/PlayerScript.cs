@@ -105,7 +105,7 @@ public class PlayerScript : MonoBehaviour {
 	}
 	
 	public  void MoveUp(){
-		if (transform.position.y+ renderer.bounds.size.y/2.0f< rail.transform.position.y+rail.renderer.bounds.size.y/2.0f && !gameOver) {
+		if (transform.position.y+ GetComponent<Renderer>().bounds.size.y/2.0f< rail.transform.position.y+rail.GetComponent<Renderer>().bounds.size.y/2.0f && !gameOver) {
 			transform.position = transform.position+new Vector3(0, 0.05f, 0);
 			for (int i = 0; i < linePositions.Count; i++) {
 				linePositions[i] += new Vector3(0, 0.05f, 0);
@@ -115,7 +115,7 @@ public class PlayerScript : MonoBehaviour {
 	}
 	
 	public void MoveDown(){
-		if (transform.position.y- renderer.bounds.size.y/2.0f> rail.transform.position.y+rail.renderer.bounds.size.y/-2.0f && !gameOver) {
+		if (transform.position.y- GetComponent<Renderer>().bounds.size.y/2.0f> rail.transform.position.y+rail.GetComponent<Renderer>().bounds.size.y/-2.0f && !gameOver) {
 			transform.position = transform.position-new Vector3(0, 0.05f, 0);
 			for (int i = 0; i < linePositions.Count; i++) {
 				linePositions[i] -= new Vector3(0, 0.05f, 0);
