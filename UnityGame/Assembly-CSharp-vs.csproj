@@ -58,6 +58,7 @@
      <Compile Include="Assets\Scripts\ToLevels.cs" />
      <Compile Include="Assets\Scripts\Up2.cs" />
      <Compile Include="Assets\Scripts\UpMove.cs" />
+     <Compile Include="Assets\Scripts\get_scores.cs" />
      <Compile Include="Assets\Scripts\load.cs" />
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Basic.shader" />
      <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
@@ -65,7 +66,7 @@
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-LightedOutline.shader" />
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Lighted.shader" />
  <Reference Include="Assembly-UnityScript-firstpass">
- <HintPath>C:/Users/AliSoliman/Desktop/clone8/K-12/UnityGame/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+ <HintPath>C:/Users/mohamadbadr/Desktop/clone1/K-12/UnityGame/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
