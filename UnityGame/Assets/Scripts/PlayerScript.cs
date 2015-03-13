@@ -13,7 +13,9 @@ public class PlayerScript : MonoBehaviour {
 	public LineRenderer lightBeam;
 	private List <Vector3> linePositions;
 	private float angle;
-	private bool gameOver;
+	private static bool gameOver;
+	public GameObject targetHalo;
+	public GameObject toLevelsButton;
 
 	void SetLightBeam()
 	{
@@ -31,9 +33,16 @@ public class PlayerScript : MonoBehaviour {
 		linePositions.Add (start);
 		linePositions.Add (end);
 		gameOver = false;
-
+		targetHalo.SetActive(false);
+		toLevelsButton.SetActive(false);
 		SetLightBeam ();
 
+	}
+
+	void EndGame()
+	{
+		targetHalo.SetActive (true);
+		toLevelsButton.SetActive(true);
 	}
 
 	
@@ -53,9 +62,15 @@ public class PlayerScript : MonoBehaviour {
 		}
 
 		detector ();
+		if (gameOver)
+			EndGame ();
 
 	}
-	
+
+	public static bool isGameOver()
+	{
+		return gameOver;
+	}
 	
 	public static void UpTrue(){
 		up = true;
@@ -90,7 +105,7 @@ public class PlayerScript : MonoBehaviour {
 	}
 	
 	public  void MoveUp(){
-		if (transform.position.y+ renderer.bounds.size.y/2.0f< rail.renderer.bounds.size.y/2.0f && !gameOver) {
+		if (transform.position.y+ GetComponent<Renderer>().bounds.size.y/2.0f< rail.transform.position.y+rail.GetComponent<Renderer>().bounds.size.y/2.0f && !gameOver) {
 			transform.position = transform.position+new Vector3(0, 0.05f, 0);
 			for (int i = 0; i < linePositions.Count; i++) {
 				linePositions[i] += new Vector3(0, 0.05f, 0);
@@ -100,7 +115,7 @@ public class PlayerScript : MonoBehaviour {
 	}
 	
 	public void MoveDown(){
-		if (transform.position.y- renderer.bounds.size.y/2.0f> rail.renderer.bounds.size.y/-2.0f && !gameOver) {
+		if (transform.position.y- GetComponent<Renderer>().bounds.size.y/2.0f> rail.transform.position.y+rail.GetComponent<Renderer>().bounds.size.y/-2.0f && !gameOver) {
 			transform.position = transform.position-new Vector3(0, 0.05f, 0);
 			for (int i = 0; i < linePositions.Count; i++) {
 				linePositions[i] -= new Vector3(0, 0.05f, 0);
@@ -169,6 +184,11 @@ public class PlayerScript : MonoBehaviour {
 				linePositions[1] = hit.point;
 				SetLightBeam();
 				gameOver = true;
+			}
+			if (hit.collider.tag == "Obstacle")
+			{
+				linePositions[1] = hit.point;
+				SetLightBeam();
 			}
 		} else {
 			PointChecker();

@@ -23,22 +23,23 @@ public class TextScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-
-		if (Time.realtimeSinceStartup < 5) {
-			SetText("You can use this button to move up.");
-		} else {
-			if(Time.realtimeSinceStartup<10){
-				SetText("You can use this button to move down.");
-			}
-			else{
-				if(Time.realtimeSinceStartup<15){
-					SetText("You can use these 2 buttons to rotate the light source .");
+		if (!PlayerScript.isGameOver ()) {
+			if (Time.realtimeSinceStartup < 5) {
+				SetText ("You can use this button to move up.");
+			} else {
+				if (Time.realtimeSinceStartup < 10) {
+					SetText ("You can use this button to move down.");
+				} else {
+					if (Time.realtimeSinceStartup < 15) {
+						SetText ("You can use these 2 buttons to rotate the light source .");
+					} else {
+						SetText ("");
+					}
 				}
-				else{
-					SetText("");
-				}
-			}
 
-		}
+			}
+		} else
+			SetText ("Congrats!! People of planet Redo thank you for enlightening their planet");
+
 	}
 }
