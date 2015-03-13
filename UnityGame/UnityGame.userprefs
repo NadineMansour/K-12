@@ -1,9 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\load.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Game Menu.js">
     <Files>
-      <File FileName="Assets\Scripts\ToLevels.cs" Line="13" Column="28" />
-      <File FileName="Assets\Scripts\load.cs" Line="27" Column="2" />
+      <File FileName="Assets\Scripts\Game Menu.js" Line="17" Column="34" />
+      <File FileName="Assets\Scripts\get_scores.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
