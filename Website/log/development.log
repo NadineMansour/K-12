@@ -687,9 +687,9 @@ Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 
 
 
 Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-10 18:23:00 +0200
-  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
-  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
-  [1m[36m (0.4ms)[0m  [1m            SELECT sql
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
             FROM sqlite_master
             WHERE name='index_installs_on_reset_password_token' AND type='index'
             UNION ALL
@@ -697,7 +697,7 @@ Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 
             FROM sqlite_temp_master
             WHERE name='index_installs_on_reset_password_token' AND type='index'
 [0m
-  [1m[35m (0.2ms)[0m              SELECT sql
+  [1m[35m (0.1ms)[0m              SELECT sql
             FROM sqlite_master
             WHERE name='index_installs_on_email' AND type='index'
             UNION ALL
@@ -705,7 +705,7 @@ Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 
             FROM sqlite_temp_master
             WHERE name='index_installs_on_email' AND type='index'
 
-  [1m[36m (0.3ms)[0m  [1m            SELECT sql
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
             FROM sqlite_master
             WHERE name='index_students_on_reset_password_token' AND type='index'
             UNION ALL
@@ -713,7 +713,7 @@ Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 
             FROM sqlite_temp_master
             WHERE name='index_students_on_reset_password_token' AND type='index'
 [0m
-  [1m[35m (0.2ms)[0m              SELECT sql
+  [1m[35m (0.1ms)[0m              SELECT sql
             FROM sqlite_master
             WHERE name='index_students_on_email' AND type='index'
             UNION ALL
@@ -721,73 +721,9 @@ Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 
             FROM sqlite_temp_master
             WHERE name='index_students_on_email' AND type='index'
 
-
-
-Started POST "/api/records/get_records_by_email" for 127.0.0.1 at 2015-03-10 21:50:09 +0200
-  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
-Processing by Api::RecordsController#get_records_by_email as JSON
-  Parameters: {"email"=>"mariam@gmail.com"}
-  [1m[35mRecord Load (2.1ms)[0m  SELECT "records".* FROM "records" WHERE "records"."email" = ?  [["email", "mariam@gmail.com"]]
-  Rendered api/records/get_records_by_email.json.rabl (35.9ms)
-Completed 200 OK in 212ms (Views: 96.3ms | ActiveRecord: 2.4ms)
-
-
-Started POST "/api/records/save_record" for 127.0.0.1 at 2015-03-10 21:50:18 +0200
-Processing by Api::RecordsController#save_record as JSON
-  Parameters: {"email"=>"mariam@gmail.com"}
-  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
-  [1m[35mSQL (1.5ms)[0m  INSERT INTO "records" ("email", "created_at", "updated_at") VALUES (?, ?, ?)  [["email", "mariam@gmail.com"], ["created_at", "2015-03-10 19:50:18.113499"], ["updated_at", "2015-03-10 19:50:18.113499"]]
-  [1m[36m (55.6ms)[0m  [1mcommit transaction[0m
-  Rendered api/records/save_record.json.rabl (1.5ms)
-Completed 201 Created in 136ms (Views: 16.5ms | ActiveRecord: 61.5ms)
-
-
-Started POST "/api/records/save_record" for 127.0.0.1 at 2015-03-10 21:50:57 +0200
-Processing by Api::RecordsController#save_record as JSON
-  Parameters: {"email"=>"mariam@gmail.com", "record"=>"1", "score"=>"8", "level"=>"3", "clicks"=>"5"}
-  [1m[35m (0.2ms)[0m  begin transaction
-  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "records" ("score", "level", "clicks", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["score", 8], ["level", 3], ["clicks", 5], ["email", "mariam@gmail.com"], ["created_at", "2015-03-10 19:50:57.945504"], ["updated_at", "2015-03-10 19:50:57.945504"]]
-  [1m[35m (57.0ms)[0m  commit transaction
-  Rendered api/records/save_record.json.rabl (0.6ms)
-Completed 201 Created in 97ms (Views: 24.3ms | ActiveRecord: 58.5ms)
-
-
-Started POST "/api/records/get_records_by_email" for 127.0.0.1 at 2015-03-10 21:51:14 +0200
-Processing by Api::RecordsController#get_records_by_email as JSON
-  Parameters: {"email"=>"mariam@gmail.com"}
-  [1m[36mRecord Load (7.5ms)[0m  [1mSELECT "records".* FROM "records" WHERE "records"."email" = ?[0m  [["email", "mariam@gmail.com"]]
-  Rendered api/records/get_records_by_email.json.rabl (11.7ms)
-Completed 200 OK in 36ms (Views: 26.6ms | ActiveRecord: 7.5ms)
-  [1m[36mRecord Load (4.7ms)[0m  [1mSELECT "records".* FROM "records"[0m
-
-
-Started POST "/api/records/get_records_by_email" for 127.0.0.1 at 2015-03-10 21:52:44 +0200
-Processing by Api::RecordsController#get_records_by_email as JSON
-  Parameters: {"email"=>"mariam@gmail.com"}
-  [1m[35mRecord Load (6.4ms)[0m  SELECT "records".* FROM "records" WHERE "records"."email" = ?  [["email", "mariam@gmail.com"]]
-  Rendered api/records/get_records_by_email.json.rabl (9.1ms)
-Completed 200 OK in 27ms (Views: 18.8ms | ActiveRecord: 6.4ms)
-
-
-Started POST "/api/records/save_record" for 127.0.0.1 at 2015-03-10 21:52:54 +0200
-Processing by Api::RecordsController#save_record as JSON
-  Parameters: {"email"=>"mariam@gmail.com", "record"=>"666", "score"=>"8", "level"=>"3", "clicks"=>"5"}
-  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
-  [1m[35mSQL (3.9ms)[0m  INSERT INTO "records" ("score", "level", "clicks", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["score", 8], ["level", 3], ["clicks", 5], ["email", "mariam@gmail.com"], ["created_at", "2015-03-10 19:52:54.998977"], ["updated_at", "2015-03-10 19:52:54.998977"]]
-  [1m[36m (27.5ms)[0m  [1mcommit transaction[0m
-  Rendered api/records/save_record.json.rabl (0.5ms)
-Completed 201 Created in 59ms (Views: 17.0ms | ActiveRecord: 31.6ms)
-
-
-Started POST "/api/records/get_records_by_email" for 127.0.0.1 at 2015-03-10 21:53:00 +0200
-Processing by Api::RecordsController#get_records_by_email as JSON
-  Parameters: {"email"=>"mariam@gmail.com"}
-  [1m[35mRecord Load (5.3ms)[0m  SELECT "records".* FROM "records" WHERE "records"."email" = ?  [["email", "mariam@gmail.com"]]
-  Rendered api/records/get_records_by_email.json.rabl (8.2ms)
-Completed 200 OK in 27ms (Views: 19.2ms | ActiveRecord: 5.3ms)
-  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
-  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
-  [1m[36m (0.3ms)[0m  [1m            SELECT sql
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
             FROM sqlite_master
             WHERE name='index_installs_on_reset_password_token' AND type='index'
             UNION ALL
@@ -795,7 +731,7 @@ Completed 200 OK in 27ms (Views: 19.2ms | ActiveRecord: 5.3ms)
             FROM sqlite_temp_master
             WHERE name='index_installs_on_reset_password_token' AND type='index'
 [0m
-  [1m[35m (0.2ms)[0m              SELECT sql
+  [1m[35m (0.1ms)[0m              SELECT sql
             FROM sqlite_master
             WHERE name='index_installs_on_email' AND type='index'
             UNION ALL
@@ -803,7 +739,7 @@ Completed 200 OK in 27ms (Views: 19.2ms | ActiveRecord: 5.3ms)
             FROM sqlite_temp_master
             WHERE name='index_installs_on_email' AND type='index'
 
-  [1m[36m (0.3ms)[0m  [1m            SELECT sql
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
             FROM sqlite_master
             WHERE name='index_students_on_reset_password_token' AND type='index'
             UNION ALL
@@ -811,7 +747,7 @@ Completed 200 OK in 27ms (Views: 19.2ms | ActiveRecord: 5.3ms)
             FROM sqlite_temp_master
             WHERE name='index_students_on_reset_password_token' AND type='index'
 [0m
-  [1m[35m (0.5ms)[0m              SELECT sql
+  [1m[35m (0.1ms)[0m              SELECT sql
             FROM sqlite_master
             WHERE name='index_students_on_email' AND type='index'
             UNION ALL
@@ -819,3 +755,146 @@ Completed 200 OK in 27ms (Views: 19.2ms | ActiveRecord: 5.3ms)
             FROM sqlite_temp_master
             WHERE name='index_students_on_email' AND type='index'
 
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddUsernameToStudents (20150310191541)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "students" ADD "username" varchar[0m
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_students_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_students_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_students_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_students_on_email' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1mCREATE UNIQUE INDEX "index_students_on_username" ON "students" ("username")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150310191541"]]
+  [1m[36m (134.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_installs_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_installs_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_installs_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_installs_on_email' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_students_on_username' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_students_on_username' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_students_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_students_on_reset_password_token' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_students_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_students_on_email' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddUsernameToUsers (20150310191648)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "users" ADD "username" varchar[0m
+SQLite3::SQLException: no such table: users: ALTER TABLE "users" ADD "username" varchar
+  [1m[35m (0.0ms)[0m  rollback transaction
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-10 21:28:52 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+):
+  activerecord (4.2.0) lib/active_record/migration.rb:393:in `check_pending!'
+  activerecord (4.2.0) lib/active_record/migration.rb:374:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:88:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:88:in `_run_callbacks'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:734:in `_run_call_callbacks'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.1.1) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /usr/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.9ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (13.1ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/_markup.html (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/style.css within layouts/inlined_string (0.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/_inner_console_markup.html within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/_prompt_box_markup.html within layouts/inlined_string (0.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/console.js within layouts/javascript (8.9ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/main.js within layouts/javascript (0.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/error_page.js within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.1.1/lib/web_console/templates/index.html (22.4ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddUsernameToUsers (20150310191648)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "users" ADD "username" varchar[0m
+SQLite3::SQLException: no such table: users: ALTER TABLE "users" ADD "username" varchar
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddUsernameToUsers (20150310191648)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "users" ADD "username" varchar[0m
+SQLite3::SQLException: no such table: users: ALTER TABLE "users" ADD "username" varchar
+  [1m[35m (0.0ms)[0m  rollback transaction
